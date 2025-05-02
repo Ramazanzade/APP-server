@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      - MONGO_URI=mongodb+srv://test:emanat1234567@testdevops.ddj33i7.mongodb.net/trendify
+      - NODE_ENV=production
+    depends_on:
+      - mongo
+    restart: always
+    volumes:
+      - ./backend:/app
+    networks:
+      - mern-net
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:80"
+    restart: always
+    volumes:
+      - ./frontend:/app
+    networks:
+      - mern-net
+
+  admin:
+    build:
+      context: ./admin
+    ports:
+      - "5174:80"
+    restart: always
+    volumes:
+      - ./admin:/app
+    networks:
+      - mern-net
+
+  mongo:
+    image: mongo:6
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mern-net
+
+volumes:
+  mongo-data:
+
+networks:
+  mern-net:

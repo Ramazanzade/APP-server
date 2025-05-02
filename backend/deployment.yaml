@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: nizamramazanzade/backend
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 4000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: MONGO_URL
+          value: "mongodb+srv://test:emanat1234567@testdevops.ddj33i7.mongodb.net/trendify"
