@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ramazanzada/backend
+        image: docker.io/ramazanzada/backend:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 4000

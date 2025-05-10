@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: admin
-        image: ramazanzada/admin
+        image: docker.io/ramazanzada/admin:latest
         ports:
         - containerPort: 80
