@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: admin-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: admin
   template:
     metadata:
       labels:
-        app: frontend
+        app: admin
     spec:
       containers:
-      - name: frontend
-        image: nizamramazanzade/frontend
+      - name: admin
+        image: ramazanzade/admin
         ports:
         - containerPort: 80
