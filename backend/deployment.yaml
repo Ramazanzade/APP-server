@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: nizamramazanzade/backend
+        image: ramazanzade/backend
         imagePullPolicy: Never
         ports:
         - containerPort: 4000
