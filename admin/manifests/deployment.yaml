@@ -18,5 +18,6 @@ spec:
       containers:
       - name: admin
         image: docker.io/ramazanzada/admin:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80

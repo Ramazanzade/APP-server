@@ -18,5 +18,6 @@ spec:
       containers:
       - name: frontend
         image: docker.io/ramazanzada/frontend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
