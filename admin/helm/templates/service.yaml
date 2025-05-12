@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "admin-chart.fullname" . }}
+  labels:
+    app: {{ include "admin-chart.name" . }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.containerPort }}
+      protocol: TCP
+  selector:
+    app: {{ include "admin-chart.name" . }}
