@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: docker.io/ramazanzada/backend:lastes
+  repository: docker.io/ramazanzada/backend
   tag: latest
   pullPolicy: Always
 

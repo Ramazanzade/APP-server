@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: docker.io/ramazanzada/admin:lastes
+  repository: docker.io/ramazanzada/admin
   tag: latest
   pullPolicy: Always
 
